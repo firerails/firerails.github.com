@@ -1,0 +1,80 @@
+{
+	"theme": "blank",
+	"slides": [
+		{
+			"layout": "title",
+			"content": {
+				"title": "抛弃PPT!",
+				"content": "html5 slides"
+			}
+		}, {
+			"layout": "normal",
+			"content": {
+				"title": "为什么放弃ppt",
+				"content": "笨重，需要powerpoint及其组件支持\n迟钝，稍微复杂的表现要花费大量的时间设计\n封闭，不能和互联网上其他应用融合\n停滞，缺乏用户贡献，发展迟缓"
+			},
+			"style": {
+				"content": {
+					"-ppt-mode": "ul"
+				}
+			}
+		}, {
+			"layout": "subtitle",
+			"content": {
+				"title": "理想的幻灯片设计是什么样子"
+			}
+		}, {
+			"layout": "normal",
+			"content": {
+				"title": "可能是这个样子",
+				"content": "随时获取，随时展示，随时编辑，无论手机还是pc\n有大把的案例或者模版直接使用，不用到处去下载然后扒皮\n有足够的素材给我搭配，不用去找一大堆完全不搭调的货\n有可以直接使用的图表，动画，效果\n大量的插件可以使用，代码变色的，播放优酷视频的"
+			},
+			"style": {
+				"content": {
+					"-ppt-mode": "ul",
+					"-ppt-size": "auto-adjust"
+				}
+			}
+		}, {
+			"layout":"subtitle", 
+			"content":
+			{
+				"title":"制作幻灯片的核心是", 
+				"content":"更快制作完成具有展现力的SHOW\neffect/time = max"
+			}
+		}, {
+			"layout": "subtitle",
+			"content": {
+				"title": "竞争者？"
+			}
+		}, {
+			"layout": "normal",
+			"content": {
+				"title": "google docs",
+				"content": "更多精力放在了如何在网上做PPT上\n比用powerpoint做更低效，更不方便\n不支持插件体系，进步迟缓\n万恶的GFW"
+			},
+			"style": {
+				"content": {
+					"-ppt-mode": "ul"
+				}
+			}
+		}, {
+			"layout": "subtitle",
+			"content": {
+				"title": "如何做？"
+			}
+		},{
+			"layout": "normal",
+			"content": {
+				"title": "核心特性",
+				"content": "灵活的架构，模版，素材，组件易于复用，插件易于开发\n社区化，活跃的核心geek用户贡献组件\n提供丰富的模版，素材，案例\n有经典幻灯片满足大多数用户快速制作幻灯片诉求"
+			},
+			"style": {
+				"content": {
+					"-ppt-mode": "ul"
+				}
+			}
+		}
+
+	]
+}

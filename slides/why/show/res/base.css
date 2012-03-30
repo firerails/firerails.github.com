@@ -1,0 +1,425 @@
+    margin: 1em 0;
+    padding: 0;
+}
+ul, ol {
+    margin: 1em 0;
+    padding: 0;
+    padding-left: 2em;
+}
+table {
+    border-collapse: collapse;
+    border-color: #069;
+}
+td, th {
+    padding: 5px 10px;
+    border-color: #069;
+    cursor: default;
+}
+th {
+    background: #d2e0f3;
+}
+tr:nth-child(odd) td {
+    background: #f0f0f0;
+}
+tr:hover td {
+    background: #eef;
+}
+blockquote, q, pre, code {
+    background: #eee;
+    border-radius: 5px;
+}
+blockquote, pre {
+    padding: 0.5em;
+    overflow: auto;
+}
+pre, code {
+    font-family: Monaco, Consolas;
+}
+mark {
+    background-color: yellow;
+    border-radius: 5px;
+}
+
+
+
+
+.disabled {
+    color: gray;
+    border-radius: 5px;
+}
+/**
+    @fileOverview
+    幻灯片播放器的基本样式
+    @author Jinjiang<zhaojinjiang@yahoo.com.cn>
+ */
+
+
+
+
+/***** General *****/
+
+    html, body {
+        margin: 0;
+        overflow: hidden;
+    }
+
+
+
+
+/***** Scroll Bar *****/
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        background: transparent;
+    }
+
+
+/* thumb */
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(0, 192, 192, 0.5);
+        border: 1px solid #000;
+        border-radius: 2px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 255, 255, 0.8);
+    }
+    ::-webkit-scrollbar-thumb:active {
+        background: rgba(0, 192, 192, 0.5);
+    }
+
+
+/* thumb:horizontal */
+
+    ::-webkit-scrollbar-thumb:horizontal {
+        background: rgba(0, 192, 192, 0.5);
+    }
+    ::-webkit-scrollbar-thumb:horizontal:hover {
+        background: rgba(0, 255, 255, 0.8);
+    }
+    ::-webkit-scrollbar-thumb:horizontal:active {
+        background: rgba(0, 192, 192, 0.5);
+    }
+
+
+/* arrow button */
+
+    ::-webkit-scrollbar-button {
+        width: 0px;
+        height: 0px;
+        background: transparent;
+    }
+
+
+
+
+/***** Layout *****/
+
+    body {
+        font-family: "Gill Sans", "Microsoft JhengHei";
+        background: white;
+        color: black;
+    }
+
+    #main {
+        -webkit-transform-origin: center top;
+        -moz-transform-origin: center top;
+        -ms-transform-origin: center top;
+        -o-transform-origin: center top;
+        -webkit-transition: -webkit-transform 0.5s;
+        -moz-transition: -moz-transform 0.5s;
+        -ms-transition: -ms-transform 0.5s;
+        -o-transition: -o-transform 0.5s;
+    }
+
+
+
+
+/***** Slide *****/
+
+    #slide {
+        position: relative;
+        width: 600px;
+        height: 450px;
+        background: white none no-repeat;
+        background-size: cover;
+        background-position: center center;
+        margin: auto;
+    }
+
+
+/* Default Layout */
+
+    #slide-title,
+    #slide-subtitle,
+    #slide-subtitle2,
+    #slide-content,
+    #slide-content2,
+    #slide-picture {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+
+/***** Helper *****/
+
+body:after {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    z-index: 20;
+    font-size: 14px;
+    font-family: "Optima", Consolas;
+    color: #333;
+    content: "H → Help(帮助)";
+}
+#helper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    background-color: rgba(128, 128, 128, 0.5);
+}
+#helper > ul {
+    margin: 120px auto;
+    padding: 1em 2em;
+    border: 1px black solid;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    width: 200px;
+}
+#helper > ul > li {
+    margin: 0;
+}
+
+/**
+    @fileOverview
+    幻灯片的基本布局
+    @author Jinjiang<zhaojinjiang@yahoo.com.cn>
+ */
+
+
+
+
+/***** General *****/
+
+#slide-title,
+#slide-subtitle,
+#slide-subtitle2,
+#slide-content,
+#slide-content2,
+#slide-picture {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -o-transform-origin: left top;
+    -ms-transform-origin: left top;
+}
+
+#slide-title {
+    font-size: 32px;
+    text-align: center;
+    height: 48px;
+    font-weight: bold;
+}
+
+#slide-subtitle {
+    font-size: 20px;
+    top: 120px;
+    width: 240px;
+    left: -260px;
+    height: 30px;
+    font-weight: bold;
+}
+#slide-subtitle2 {
+    font-size: 20px;
+    top: 120px;
+    width: 240px;
+    left: 620px;
+    height: 30px;
+    font-weight: bold;
+}
+#slide-content2 {
+    top: 160px;
+    width: 240px;
+    left: 620px;
+}
+
+#slide p {
+    margin: 0;
+}
+
+
+
+
+/***** Big Title template *****/
+
+#slide[data-layout="title"] #slide-title {
+    display: block;
+    opacity: 1;
+    font-size: 48px;
+    width: 500px;
+    top: 160px;
+    left: 50px;
+    height: 72px;
+}
+#slide[data-layout="title"] #slide-content {
+    display: block;
+    opacity: 1;
+    text-align: center;
+    font-size: 24px;
+    width: 320px;
+    top: 250px;
+    left: 140px;
+}
+
+
+
+
+/***** Sub-Title template *****/
+
+#slide[data-layout="subtitle"] #slide-title {
+    display: block;
+    opacity: 1;
+    text-align: left;
+    width: 420px;
+    top: 200px;
+    left: 50px;
+}
+#slide[data-layout="subtitle"] #slide-content {
+    display: block;
+    opacity: 1;
+    font-size: 20px;
+    width: 320px;
+    top: 260px;
+    left: 80px;
+}
+
+
+
+
+/***** Normal template *****/
+
+#slide[data-layout="normal"] #slide-title,
+#slide[data-layout="double"] #slide-title,
+#slide[data-layout="double-subtitle"] #slide-title {
+    display: block;
+    opacity: 1;
+    width: 500px;
+    top: 50px;
+    left: 50px;
+}
+#slide[data-layout="normal"] #slide-content {
+    display: block;
+    opacity: 1;
+    width: 500px;
+    top: 120px;
+    left: 50px;
+    height: 280px;
+}
+
+
+#slide[data-layout="double"] #slide-content {
+    display: block;
+    opacity: 1;
+    width: 240px;
+    top: 120px;
+    left: 50px;
+    height: 280px;
+}
+#slide[data-layout="double"] #slide-content2 {
+    display: block;
+    opacity: 1;
+    width: 240px;
+    top: 120px;
+    left: 310px;
+    height: 280px;
+}
+
+
+#slide[data-layout="double-subtitle"] #slide-subtitle {
+    display: block;
+    opacity: 1;
+    width: 240px;
+    top: 120px;
+    left: 50px;
+}
+#slide[data-layout="double-subtitle"] #slide-subtitle2 {
+    display: block;
+    opacity: 1;
+    width: 240px;
+    top: 120px;
+    left: 310px;
+}
+#slide[data-layout="double-subtitle"] #slide-content {
+    display: block;
+    opacity: 1;
+    width: 240px;
+    top: 160px;
+    left: 50px;
+    height: 220px;
+}
+#slide[data-layout="double-subtitle"] #slide-content2 {
+    display: block;
+    opacity: 1;
+    width: 240px;
+    top: 160px;
+    left: 310px;
+    height: 220px;
+}
+
+
+
+
+/***** Picture template *****/
+
+#slide[data-layout="picture"] #slide-title {
+    display: block;
+    opacity: 1;
+    text-align: center;
+    width: 480px;
+    top: 330px;
+    left: 60px;
+}
+#slide[data-layout="picture"] #slide-content {
+    display: block;
+    opacity: 1;
+    text-align: center;
+    width: 560px;
+    top: 380px;
+    left: 20px;
+}
+#slide[data-layout="picture"] #slide-picture {
+    display: block;
+    opacity: 1;
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    width: 500px;
+    height: 280px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+#slide-content pre,
+#slide-content2 pre {
+    height: 100%;
+    margin: 0;
+    font-size: 80%;
+}
+
